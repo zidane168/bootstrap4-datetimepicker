@@ -1,0 +1,148 @@
+<!-- fontawesome v6.1.1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    fontawesome 6.1.1
+  </title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="js/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/tempus-dominus-bootstrap4.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <hr />
+    <div class="row mt-4">
+      <div class="col-12">
+        Learn more tips on <a href="https://learn-tech-tips.blogspot.com"> Learn Tech Tips Blogspot </a> - <span class="italic bold blue">Z</span>idane
+      </div>
+    </div>
+    <hr />
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <label class="bold"> <i class="fa-solid fa-hand-point-right"></i> Calendar with full format YYYY-MM-DD HH:mm:ss </label>
+        <pre>
+          &#60;div class="form-group"&#62;
+              &#60;div class="input-group date" id="datetimepicker1" data-target-input="nearest"&#62;
+              &#60;input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" /&#62;
+              &#60;div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker"&#62;
+                &#60;div class="input-group-text"&#62;&#60;i class="fa fa-calendar"&#62;&#60;/i&#62;&#60;/div&#62;
+              &#60;/div&#62;
+            &#60;/div&#62;
+          &#60;/div&#62;
+        </pre>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-6">
+        <div class="form-group">
+          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
+            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="row mt-4">
+      <div class="col-12">
+        <label class="bold"> <i class="fa-solid fa-hand-point-right"></i>  Calendar with LIMIT format YYYY-MM-DD, onChange Event</label>
+
+        <pre>
+          $(document).ready(function () {
+            $("#datetimepicker2").datetimepicker({
+              format: 'YYYY-MM-DD',
+            });
+        
+            $("#datetimepicker2").on("change.datetimepicker", ({ date, oldDate }) => {
+              console.log(date);
+              $('#current_date').text(date);
+              $('#old_date').text(oldDate);
+            }
+            );
+          });
+        </pre>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-6">
+        <div class="form-group">
+          <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2" />
+            <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div>
+          <label> Current date: </label> <span class="red" id="current_date"></span>
+        </div>
+        <div>
+          <label> Old date: </label> <span class="blue" id="old_date"> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/moment2_29_1.js"></script>
+<script type="text/javascript" src="js/tempus-dominus-bootstrap4-fontawesome6.1.1.min.js"></script>
+
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#datetimepicker2").datetimepicker({
+      format: 'YYYY-MM-DD',
+    });
+
+    $("#datetimepicker2").on("change.datetimepicker", ({ date, oldDate }) => {
+      console.log(date);
+      $('#current_date').text(date);
+      $('#old_date').text(oldDate);
+    }
+    );
+  });
+
+</script>
